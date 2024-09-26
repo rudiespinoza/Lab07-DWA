@@ -1,0 +1,26 @@
+<h2>Listado de Proveedores</h2>
+<a href="/proveedores/crear" class="btn btn-success">Nuevo Proveedor</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID Proveedor</th>
+      <th>Nombre Compañía</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% proveedores.forEach(proveedor => { %>
+    <tr>
+      <td><%= proveedor.idproveedor %></td>
+      <td><%= proveedor.nombrecia %></td>
+      <td>
+        <a
+          href="/proveedores/borrar/<%= proveedor._id %>"
+          class="btn btn-danger"
+          >Borrar</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

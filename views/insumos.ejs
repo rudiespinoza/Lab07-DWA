@@ -1,0 +1,30 @@
+<h2>Listado de Insumos</h2>
+<a href="/insumos/crear" class="btn btn-success">Nuevo Insumo</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID Insumo</th>
+      <th>Nombre</th>
+      <th>Precio Unitario</th>
+      <th>Stock</th>
+      <th>ID Proveedor</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% insumos.forEach(insumo => { %>
+    <tr>
+      <td><%= insumo.idinsumo %></td>
+      <td><%= insumo.nominsumo %></td>
+      <td><%= insumo.preUni %></td>
+      <td><%= insumo.stock %></td>
+      <td><%= insumo.idproveedor %></td>
+      <td>
+        <a href="/insumos/borrar/<%= insumo._id %>" class="btn btn-danger"
+          >Borrar</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
